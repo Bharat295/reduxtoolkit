@@ -15,9 +15,14 @@ const userSlice = createSlice({
             console.log('del');
             return [];
         },
+        updateUser: (state, action) => {
+            const { id, text } = action.payload;
+            state[id] = text;
+        },
     }
 });
-console.log(userSlice.actions); 
-export const { addUser , removeUser , deleteUsers } = userSlice.actions;
+
+// console.log(userSlice.actions); 
+export const { addUser , removeUser , deleteUsers , updateUser } = userSlice.actions;
 
 export default userSlice.reducer;
